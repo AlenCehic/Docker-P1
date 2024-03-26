@@ -33,12 +33,20 @@
 - docker rmi
 - docker pull
 - docker run
-- - -it steht für interaktiv, es wird eine shell innerhalb des Containers geöffnet.
-  - --name gibt den namen des conainers an
+| Option            | Description                                                                                                     |
+| ----------------- | --------------------------------------------------------------------------------------------------------------- |
+| -it               | steht für interaktiv, es wird eine Shell innerhalb des Containers geöffnet                                      |
+| --name            | gibt den Namen des Containers an                                                                                |
+| --detach, -d      | Führt den Container im Hintergrund aus. Gibt beim Start die Container-ID in der Konsole aus                     |
+| --interactive, -i | Lässt STDIN (Standard Input) geöffnet, auch wenn der Container im Hintergrund ausgeführt wird                   |
+| --publish, -p     | Veröffentlicht den Port eines Containers für den Host z.B. -p 80:8080 mappt Container-Port 8080 zu Host-Port 80 |
+| --tty, -t         | Ordnet ein Pseudo-TTY (Pseudo-Terminal) zu                                                                      |
+| --rm              | entfernt den Container bei Programmende                                                                         |
 - docker start
 - docker stop
 - docker rm
 - docker ps
+- - -a gibt ein liste aller vorhandenen container (auch die die gestoppt sind) ansonsten werden nur laufende container angezeigt
 - docker exec
 # Versionen (tags) eines Container-Images
 # Portweiterleitungen
