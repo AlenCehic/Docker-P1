@@ -16,16 +16,16 @@
 - Sie können eigene Dockerfiles für eine Webseite erstellen, testen und dokumentieren
 
 # Begriffe
-- Containerisierung
-	> Containervirtualisierung (oder Containering) ist eine Methode, um mehrere Instanzen eines Betriebssystems (als "Gäste") isoliert voneinander den Kernel eines Hostsystems nutzen zu lassen.
-- Image
-	> Ein Image enthält alle Benötigten Komponenten, inkl. Bibliotheken, Hilfsprogramme und sonstige Dateien für den Betrieb.
-- Layer
-- Container
-	> Ein Image bleibt nach dem Download immer unverändert. Das Image ist quasi schreibgeschützt. Ein Image kann auch nicht gestartet werden, sondern es wird aus dem Image heraus ein (oder mehrere) Container gestartet. Schreiboperationen des Containers landen in einem Overlay-Dateisystem, welches "über" dem Dateisystem des Images liegt.
-- Repository
-- Registry
-- Dockerfile
+
+| Begriff | Definition |
+| :--- | :--- |
+| Image | Schreibgeschützte Vorlage mit dem Speicherabbild eines Containers |
+| Container | Aktive Instanz eines Images |
+| Layer | Teil eines Images. Enthält einen Befehl oder eine Datei, die dem Image hinzugefügt wurde. |
+| Repository | Satz gleichnamiger Images mit verschiedenen Tags, zumeist Versionen |
+| Registry | Verwaltet Repositories. z.B. DockerHub |
+| Dockerfile | Textdatei mit allen Befehlen, um ein Image zusammenzustellen |
+| Containerisierung | Bezeichnet die Virtualisierung mit Hilfe von Containern. Eine Software wird mit all ihren erforderlichen Komponenten wie Frameworks, Libraries und weiteren Abhängikeiten in einen Container verpackt. |
 
 # Virtualisierung vs Cloud
 
