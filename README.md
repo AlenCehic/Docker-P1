@@ -33,6 +33,8 @@
 - docker rmi
 - docker pull
 - docker run
+- - -it steht für interaktiv, es wird eine shell innerhalb des Containers geöffnet.
+  - --name gibt den namen des conainers an
 - docker start
 - docker stop
 - docker rm
