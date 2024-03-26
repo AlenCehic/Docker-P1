@@ -103,4 +103,15 @@ Volumes in eigenen Verzeichnissen:
 | WORKDIR | Legt das Arbeitsverzeichnis für Run, CMD, COPY etc. fest |
 # ENTRYPOINT und CMD
 # COPY und ADD
+Beide Kommandos kopieren Dateien oder Verzeichnisse vom Host in das Imagedateisystem:
+> COPY samplesite/ /var/www/html
+
+> ADD myfonts.tgz /usr/local/share/texmf
+
+Im Unterschied zu *COPY* kann *ADD* zusätzlich auch:
+- eine URL als Quelle verwenden
+- Archivdateien (tar, gz, ..) automatisch entpacken
+
+Mit --chown=user:group kann der Eigentümer und die Gruppe im Zielsystem festgelegt werden
+> COPY --chown=node package.json package-lock.json /src/
 # Eigenes Dockerfile für Webseite
