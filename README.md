@@ -57,6 +57,16 @@ Clouds sind IT-Umgebungen, mit denen sich skalierbare Ressourcen extrahieren, zu
 - docker exec
   
 # Versionen (tags) eines Container-Images
+Nach dem Doppelpunkt eines Images wird eine spezifische Version angegeben, z.B. ubuntu:22.04 oder latest. Wird nichts angegeben wird automatisch latest verwendet.
+
+Mit Version 22.04
+> docker pull ubuntu:22.04
+
+Keine Version (latest wird genommen)
+> docker pull ubuntu
+
+Mit latest
+> docker pull ubuntu:latest
 
 # Portweiterleitungen
 - -p
