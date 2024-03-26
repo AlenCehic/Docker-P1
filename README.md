@@ -35,7 +35,7 @@
 - docker run
 
 | Option            | Description                                                                                                     |
-| ----------------- | --------------------------------------------------------------------------------------------------------------- |
+| ----------------- | :-------------------------------------------------------------------------------------------------------------- |
 | -it               | steht für interaktiv, es wird eine Shell innerhalb des Containers geöffnet                                      |
 | --name            | gibt den Namen des Containers an                                                                                |
 | --detach, -d      | Führt den Container im Hintergrund aus. Gibt beim Start die Container-ID in der Konsole aus                     |
@@ -87,6 +87,20 @@ Volumes in eigenen Verzeichnissen:
 > my_net
 # Syntax von Dockerfiles
 # 12 Anweisungen von Dockerfiles
+| Schlüsselwort | Bedeutung |
+| --- | :--- |
+| ADD | Kopiert Dateien vom **Host** oder einer **entfernten URL** in das Dateisystem des Images |
+| CMD | Setzt das Kommando, das beim Start des Containers ausgeführt wird, sofern es **nicht übersteuert** wird |
+| COPY | Kopiert Dateien vom **Host** in das Dateisystem des Images |
+| ENTRYPOINT | Setzt das Kommando, das beim Start des Containers **immer** ausgeführt wird|
+| ENV | Setzt eine Umgebungsvariable |
+| EXPOSE | Definiert die zur Laufzeit des Containers aktiven Netzwerk-Ports |
+| FROM | Setzt das Basis-Image für die nachfolgenden Anweisungen |
+| LABEL | Fügt dem Image Metadaten hinzu |
+| RUN | Führt das angegebene Kommando einmalig während **docker build** aus und erzeugt dadurch ein neuen **Image-Layer** |
+| USER | Gibt den Account für RUN, CMD und ENTRYPOINT an |
+| VOLUME | Definiert einen Mount Point auf ein Verzeichnis auf dem Host oder einem anderen Container |
+| WORKDIR | Legt das Arbeitsverzeichnis für Run, CMD, COPY etc. fest |
 # ENTRYPOINT und CMD
 # COPY und ADD
 # Eigenes Dockerfile für Webseite
