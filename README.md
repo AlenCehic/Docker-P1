@@ -1,4 +1,5 @@
 # Zusammenfassung P1 Docker
+
 ## Lernziele:
 - Sie können die Begriffe "Containerisierung", "Image", "Layer", "Container", "Repository", "Registry" und Dockerfile erklären
 - Sie können die Begriffe Virtualisierung und Cloud voneinander trennen
@@ -27,6 +28,7 @@
 - Dockerfile
 
 # Virtualisierung vs Cloud
+
 # Elementare Commands
 - docker build
 - docker push
@@ -50,13 +52,17 @@
 - docker ps
 - - -a gibt ein liste aller vorhandenen container (auch die die gestoppt sind) ansonsten werden nur laufende container angezeigt
 - docker exec
+  
 # Versionen (tags) eines Container-Images
+
 # Portweiterleitungen
 - -p
+  
 # Volumes
 Hier geht es darum, wo ein Container seine Daten speichert. Das Docker-Zustandsdiagramm legt nahe, dass Daten die in einem laufenden Container gespeichert sind, enthalten bleiben, wenn der Container gestoppt und wieder gestartet wird, nicht jedoch wenn ein Container gelöscht und wieder neu erzeugt wird.
 
 **Unbenannte Volumes**
+
 **Anonymous Volumes:** Mit folgenden Komanndo kann ein Container aus einem heruntergeladenen Image gestartet werden:
 > docker run -d --name mariadb-test -e MYSQL_ROOT_PASSWORD=geheim mariadb
 
@@ -64,6 +70,7 @@ Um herauszufinden wo nun die Daten aus /var/lib/mysql gelandet sind:
 > docker inspect -f '{{.Mounts}}' mariadb-test
 
 **Benannte Volumes**
+
 **Named Volumes** Volumes beim Erstellen eines Containers zu bennenen
 > docker run -d --name mariadb-test2 -v myvolume:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=geheim mariadb
 
@@ -73,6 +80,7 @@ Gewählter Name für das Unterverzeichnis wird verwendet, Syntax:
 Volumes in eigenen Verzeichnissen:
 > mkdir /home/vmadmin/database
 > docker run -d --name mariadb-test3 -v /home/vmadmin/database:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=geheim mariadb
+
 # Docker-Netzwerke
 > docker network ls
 
@@ -85,7 +93,9 @@ Volumes in eigenen Verzeichnissen:
 > \-\- subnet=10.10.10.0/24 \\
 > \-\-gateway=10.10.10.1 \\
 > my_net
+
 # Syntax von Dockerfiles
+
 # 12 Anweisungen von Dockerfiles
 | Schlüsselwort | Bedeutung |
 | --- | :--- |
@@ -101,7 +111,20 @@ Volumes in eigenen Verzeichnissen:
 | USER | Gibt den Account für RUN, CMD und ENTRYPOINT an |
 | VOLUME | Definiert einen Mount Point auf ein Verzeichnis auf dem Host oder einem anderen Container |
 | WORKDIR | Legt das Arbeitsverzeichnis für Run, CMD, COPY etc. fest |
+
 # ENTRYPOINT und CMD
+Beide Kommandos geben an, welches Programm beim Start eines Containers mit **docker run** oder **docker start** ausgeführt wird.
+Als erstes wird in eckigen Klammern (Array) und doppelten Hochkommas der vollständige Pfad eines Programmes angegeben.
+Die anschliessenden Arrayelemente dienen als Parameter für das Kommando
+> CMD ["/bin/ls", "/var"]
+
+Bei *CMD* wird ein Kommando, das bei docker run mitgegeben wird, anstelle von CMD ausgeführt
+Bei *ENTRYPOINT* wird ein Kommando, das bei docker run mitgegeben wird, als weiterer Parameter zu ENTRXPOINT hinzugefügt
+
+Es können auch beide Schlüsselwörter verwendet werden. Beispielsweise gibt es beim mariadb Image die folgenden Einträge:
+> CMD ["mysqld"]
+> ENTRYPOINT ["docker-entrypoint.sh"]
+
 # COPY und ADD
 Beide Kommandos kopieren Dateien oder Verzeichnisse vom Host in das Imagedateisystem:
 > COPY samplesite/ /var/www/html
@@ -114,4 +137,5 @@ Im Unterschied zu *COPY* kann *ADD* zusätzlich auch:
 
 Mit --chown=user:group kann der Eigentümer und die Gruppe im Zielsystem festgelegt werden
 > COPY --chown=node package.json package-lock.json /src/
+
 # Eigenes Dockerfile für Webseite
