@@ -28,6 +28,9 @@
 | Containerisierung | Bezeichnet die Virtualisierung mit Hilfe von Containern. Eine Software wird mit all ihren erforderlichen Komponenten wie Frameworks, Libraries und weiteren Abhängikeiten in einen Container verpackt. |
 
 # Virtualisierung vs Cloud
+Virtualisierung ist eine Technologie, mit der sich aus einem physischen Hardware-System mehrere simulierte Umgebungen oder dedizierte Ressourcen erstellen lassen.
+
+Clouds sind IT-Umgebungen, mit denen sich skalierbare Ressourcen extrahieren, zu Pools zusammenfassen und gemeinsam in einem Netzwerk verwenden lassen.
 
 # Elementare Commands
 - docker build
