@@ -33,6 +33,7 @@
 - docker rmi
 - docker pull
 - docker run
+
 | Option            | Description                                                                                                     |
 | ----------------- | --------------------------------------------------------------------------------------------------------------- |
 | -it               | steht für interaktiv, es wird eine Shell innerhalb des Containers geöffnet                                      |
@@ -42,6 +43,7 @@
 | --publish, -p     | Veröffentlicht den Port eines Containers für den Host z.B. -p 80:8080 mappt Container-Port 8080 zu Host-Port 80 |
 | --tty, -t         | Ordnet ein Pseudo-TTY (Pseudo-Terminal) zu                                                                      |
 | --rm              | entfernt den Container bei Programmende                                                                         |
+
 - docker start
 - docker stop
 - docker rm
