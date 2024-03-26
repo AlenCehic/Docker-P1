@@ -96,6 +96,8 @@ Volumes in eigenen Verzeichnissen:
 
 # Syntax von Dockerfiles
 
+https://gbssg.gitlab.io/m347/images-eigene/
+
 # 12 Anweisungen von Dockerfiles
 | Schlüsselwort | Bedeutung |
 | --- | :--- |
