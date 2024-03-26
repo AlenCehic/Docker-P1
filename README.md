@@ -122,7 +122,7 @@ Bei *CMD* wird ein Kommando, das bei docker run mitgegeben wird, anstelle von CM
 Bei *ENTRYPOINT* wird ein Kommando, das bei docker run mitgegeben wird, als weiterer Parameter zu ENTRXPOINT hinzugefügt
 
 Es können auch beide Schlüsselwörter verwendet werden. Beispielsweise gibt es beim mariadb Image die folgenden Einträge:
-> CMD ["mysqld"]
+> CMD ["mysqld"] <br>
 > ENTRYPOINT ["docker-entrypoint.sh"]
 
 # COPY und ADD
