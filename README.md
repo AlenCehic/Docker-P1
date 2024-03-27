@@ -163,7 +163,7 @@ Docker image erstellen:
 > docker build -t my-apache-image .
 
 Container mit den Volumes starten
-> docker run -d -p 8080:80 -v $(pwd)/website_files:/usr/local/apache2/htdocs -v $(pwd)/logs:/usr/local/apache2/logs/mylogs my-apache-image
+> docker run -d -p 8080:80 -v \$(pwd)/website_files:/usr/local/apache2/htdocs -v \$(pwd)/logs:/usr/local/apache2/logs/mylogs my-apache-image
 
 *\$(pwd)/website_files:/usr/local/apache2/htdocs* bindet das Verzeichnis *website_files* auf dem Host mit dem Verzeichnis */usr/local/apache2/htdocs* im container
 
