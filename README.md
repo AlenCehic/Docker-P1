@@ -154,3 +154,17 @@ Mit --chown=user:group kann der Eigentümer und die Gruppe im Zielsystem festgel
 > COPY --chown=node package.json package-lock.json /src/
 
 # Eigenes Dockerfile für Webseite
+> FROM httpd:latest <br>
+> COPY ./website_files/ /usr/local/apache2/htdocs/ <br>
+> RUN mkdir /usr/local/apache2/logs/mylogs && ln -s /usr/local/apache2/logs/mylogs /var/log/apache2 <br>
+> EXPOSE 8080
+
+Docker image erstellen:
+> docker build -t my-apache-image .
+
+Container mit den Volumes starten
+> docker run -d -p 8080:80 -v $(pwd)/website_files:/usr/local/apache2/htdocs -v $(pwd)/logs:/usr/local/apache2/logs/mylogs my-apache-image
+
+*$(pwd)/website_files:/usr/local/apache2/htdocs* bindet das Verzeichnis *website_files* auf dem Host mit dem Verzeichnis */usr/local/apache2/htdocs* im container
+
+*$(pwd)/logs:/usr/local/apache2/logs/mylogs* bindet das Verzeichnis *logs* auf dem Host mit dem Verzeichnis */usr/local/apache2/logs/mylogs*
